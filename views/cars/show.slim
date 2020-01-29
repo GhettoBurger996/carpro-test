@@ -1,0 +1,38 @@
+.content
+  a href="#" onclick="history.back()" Back
+
+  .flex.mt-12
+    div class="w-1/3"
+      img src="data:image/jpg;base64, #{@car.vehicle_crop}"
+      img src="data:image/jpg;base64, #{@car.plate_crop}"
+
+    div class="w-2/3"
+      .mb-8
+        h1.text-xl = @car.plate
+      table
+        tr
+          th Time Spotted
+          th Time End
+        tr
+          td = human_time @car.time_start
+          td = human_time @car.time_end
+
+      .my-12
+        h1.text-lg Details
+        table
+          tr
+            td.font-bold CAM
+            td = @car.cam_id
+          tr
+            td.font-bold Plate
+            td = @car.plate
+          tr
+            td.font-bold Country
+            td = @car.country
+
+      div
+        h2 Other occurrence
+        ul
+          - @entries.each do |car|
+            li
+              a href="/cars/#{@car.plate}/#{car.id}" = human_time(car.time_start)

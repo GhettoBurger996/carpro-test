@@ -1,0 +1,11 @@
+@above desktop {
+  .topnav {
+    .nav-items li {
+      @apply px-2 py-2;
+
+      & + li {
+        @apply ml-8;
+      }
+    }
+  }
+}

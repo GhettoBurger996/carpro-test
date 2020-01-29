@@ -1,0 +1,18 @@
+.container
+  nav.topnav.flex
+    h1.mr-12 Car Cam
+
+    ul.list-none.nav-items
+      li.inline
+        a href="/cars" Entries
+      li.inline
+        a href="/users" Users
+
+    ul.list-none.ml-auto.nav-items
+      - if current_user
+        li.inline Welcome #{current_user.username}
+        li.inline
+          a href="/logout" Logout
+      - else
+        li.inline
+          a href="/" Login

@@ -1,0 +1,14 @@
+@import "./css/turbolinks.scss";
+@import "./css/breakpoints.scss";
+
+@import "tailwindcss/base";
+@import "./css/defaults.scss";
+
+@import "tailwindcss/components";
+@import "./css/components/button.scss";
+@import "./css/components/pagination.scss";
+@import "./css/components/topnav.scss";
+@import "./css/components/form.scss";
+@import "./css/components/flash.scss";
+
+@import "tailwindcss/utilities";

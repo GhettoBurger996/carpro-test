@@ -1,0 +1,17 @@
+form {
+  label {
+    @apply font-bold;
+  }
+  input {
+    @apply border border-gray-500 p-2;
+  }
+
+  .form-group {
+    @apply my-2;
+    input, label { @apply w-full; }
+  }
+
+  select {
+    @apply w-full p-2;
+  }
+}

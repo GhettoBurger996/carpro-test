@@ -1,0 +1,14 @@
+.content
+  h1.text-xl.border-b.border-gray-600.pb-6.mb-8 All Entries
+
+  table.table
+    tr
+      th Plate
+      th Time
+    - @cars.each do |car|
+      tr
+        td
+          a href="/cars/#{car.plate}" = car.plate
+        td = human_time car.values[:max_time_start]
+
+  .my-8 == pagy_nav @pagy

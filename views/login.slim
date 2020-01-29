@@ -1,0 +1,14 @@
+div class="md:w-1/3 mx-auto"
+  h1 Login
+
+  - if flash["err"]
+    .flash.error = flash["err"]
+
+  form.mt-4 method="POST" action="/login"
+    .form-group
+      label for="username" Username:
+      input#username.w-full type="text" placeholder="username" name="username"
+    input.w-full.mt-2 type="password" placeholder="password" name="password"
+
+    .mt-8
+      button.btn.rounded-none.bg-green-500.border-none.text-white.w-full.py-2 type="submit" Login

@@ -1,0 +1,22 @@
+.content
+  h1.text-xl.border-b.border-gray-600.pb-6.mb-8 User #{@user.username}
+
+  form method="POST" action="/users/#{@user.id}"
+    input type="hidden" name="_METHOD" value="PUT"
+
+    h1 Update
+    .form-group
+      label for="pass" Password
+      input#pass type="password" name="user[password]" placeholder="new password"
+      p.text-grey-300.italic minimum length 6 (leave blank if unchanged)
+    .form-group
+      label for="level" Admin Level
+      br
+      select#level name="user[level]"
+        option value="0" selected=(@user.level == 0) Normal
+        option value="3" selected=(@user.level == 3) Admin
+      pu
+
+
+
+    button.btn.rounded-none type="submit" Save

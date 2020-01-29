@@ -1,0 +1,29 @@
+.content
+  .flex.border-b.border-gray-600.pb-6.mb-8
+    div
+      h1.text-xl All Users
+    .ml-auto
+      a.btn href="/users/new" Create User
+
+
+  - if flash["err"]
+    .flash.error = flash["err"]
+
+  - if flash["success"]
+    .flash.success = flash["success"]
+
+  table.table
+    tr
+      th Username
+      th Level
+      th width="100" Delete
+    - @users.each do |user|
+      tr
+        td
+          a href="/users/#{user.id}" = user.username
+        td = user.admin? ? "Admin" : "User"
+        td
+          - if current_user.id != user.id
+            a href="/users/#{user.id}/delete" Delete
+
+  .my-8 == pagy_nav @pagy

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo Migrating
+bundle exec rake db:migrate

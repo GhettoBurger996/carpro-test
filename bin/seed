@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require "oj"
+require_relative "../models"
+
+Dir["./sample_data/*.json"].each do |f|
+  file = File.open(f)
+  data = Oj.load(file)
+  Car.create_from_feed(data)
+end
